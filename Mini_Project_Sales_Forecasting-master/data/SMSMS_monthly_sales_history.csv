@@ -1,0 +1,14 @@
+month,total_dispatch_amount,planned_schedule_amount,source,is_interpolated,achievement_pct
+2025-07-01,3547275.0,4084087.0,SCHEDULE sheet (rate x qty),False,86.9
+2025-08-01,4114078.0,4407524.0,SCHEDULE sheet (rate x qty),False,93.3
+2025-09-01,3552751.0,3954200.0,SCHEDULE sheet (rate x qty),False,89.8
+2025-10-01,2894978.0,4572766.5,SCHEDULE sheet (rate x qty),False,63.3
+2025-11-01,4273690.4,5993431.6,HMC + VMC summary sheets,False,71.3
+2025-12-01,4184762.63,4520446.0,HMC + VMC summary sheets,True,92.6
+2026-01-01,4095834.86,,"daily transaction log (253 orders, 4 unparseable rows)",False,
+2026-02-01,3258916.28,,"daily transaction log (257 orders, 19 unparseable rows)",False,
+2026-03-01,3783560.0,5181921.0,SCHEDULE sheet (rate x qty),False,73.0
+2026-04-01,3510716.0,4814183.0,SCHEDULE sheet (rate x qty),False,72.9
+2026-05-01,3244915.0,4821683.0,SCHEDULE sheet (rate x qty),False,67.3
+2026-06-01,2991390.0,4652264.0,SCHEDULE sheet (rate x qty),False,64.3
+2026-07-01,3575531.0,5216843.5,SCHEDULE sheet (rate x qty),False,68.5

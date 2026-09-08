@@ -1,0 +1,6 @@
+psycopg2-binary==2.9.10
+numpy==2.2.1
+python-dotenv==1.0.1
+pandas==2.2.3
+scikit-learn==1.6.0
+statsmodels==0.14.4

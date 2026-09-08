@@ -1,0 +1,67 @@
+erDiagram
+    USERS {
+        int user_id PK
+        string username
+        string password_hash
+        string role
+    }
+
+    ORDERS {
+        int order_id PK
+        string customer_name
+        date order_date
+        date due_date
+        int total_qty
+        decimal total_amount
+        string status
+    }
+
+    BATCHES {
+        int batch_id PK
+        int order_id FK
+        int quantity
+        string status
+    }
+
+    QUALITY_LOGS {
+        int log_id PK
+        int batch_id FK
+        int logged_by FK
+        date check_date
+        int qty_checked
+        int defect_count
+        string pass_fail
+    }
+
+    ANOMALY_FLAGS {
+        int flag_id PK
+        int quality_log_id FK
+        string metric_type
+        date flagged_date
+        float value
+        float threshold
+        boolean is_outlier
+    }
+
+    PAYMENTS {
+        int payment_id PK
+        int order_id FK
+        decimal amount
+        date payment_date
+        string status
+    }
+
+    SALES_FORECAST {
+        int forecast_id PK
+        date forecast_date
+        decimal predicted_value
+        decimal actual_value
+        string model_used
+        datetime generated_at
+    }
+
+    USERS ||--o{ QUALITY_LOGS : "logs (logged_by)"
+    ORDERS ||--o{ BATCHES : "split into"
+    BATCHES ||--o{ QUALITY_LOGS : "inspected via"
+    QUALITY_LOGS ||--o{ ANOMALY_FLAGS : "flagged by"
+    ORDERS ||--o{ PAYMENTS : "paid via"

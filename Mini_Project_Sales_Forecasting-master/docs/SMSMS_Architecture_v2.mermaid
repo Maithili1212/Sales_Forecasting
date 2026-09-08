@@ -1,0 +1,22 @@
+graph TD
+    A["Android App<br/>(Order & Batch, Quality Control,<br/>Dashboards, Accounts)"]
+
+    A -->|"HTTPS + JWT"| B
+
+    subgraph B["Node.js / Express REST API<br/>(JWT verified, role-checked server-side)"]
+        B1["Order & Batch"]
+        B2["Quality Control"]
+        B3["Accounts & Payments"]
+        B4["Dashboards & Reports"]
+    end
+
+    B <-->|"reads / writes"| D[("PostgreSQL Database<br/>(shared by all services)")]
+
+    B <-->|"quality data / forecast requests"| C
+
+    subgraph C["ML API (Python + scikit-learn / statsmodels)"]
+        C1["Anomaly Detection<br/>(z-score / IQR on defect rates)"]
+        C2["Sales Forecasting<br/>(EDA + trained time-series model)"]
+    end
+
+    C -->|"reads order history,<br/>writes forecast results"| D
